@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> | CONSTIFIED SIGNATURE</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  
+  <main>
+    <section class="hero-slider">
+      <div class="slider-container">
+        <div class="slide active">
+          <div class="slide-content">
+            <h1>Premium Footwear For All</h1>
+            <p>Discover the perfect blend of style, comfort, and quality</p>
+            <div class="hero-buttons">
+              <a href="/collection/men" class="btn primary-btn">Shop Men</a>
+              <a href="/collection/women" class="btn secondary-btn">Shop Women</a>
+            </div>
+          </div>
+          <div class="slide-image" style="background-image: url('/api/placeholder/1200/600'); background-size: cover;"></div>
+        </div>
+        <div class="slide">
+          <div class="slide-content">
+            <h1>New Season Collection</h1>
+            <p>Step into sophistication with our latest arrivals</p>
+            <a href="/shop" class="btn primary-btn">Shop Now</a>
+          </div>
+          <div class="slide-image" style="background-image: url('/api/placeholder/1200/600'); background-size: cover;"></div>
+        </div>
+        <div class="slide">
+          <div class="slide-content">
+            <h1>African-Inspired Designs</h1>
+            <p>Cultural heritage meets contemporary style</p>
+            <a href="/collection/signature" class="btn primary-btn">View Collection</a>
+          </div>
+          <div class="slide-image" style="background-image: url('/api/placeholder/1200/600'); background-size: cover;"></div>
+        </div>
+      </div>
+      <div class="slider-controls">
+        <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+        <div class="slider-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </section>
+
+    <section class="featured-categories">
+      <div class="container">
+        <h2 class="section-title">Shop By Category</h2>
+        <div class="category-grid">
+          <a href="/collection/men" class="category-item">
+            <div class="category-image" style="background-image: url('/api/placeholder/500/600'); background-size: cover;"></div>
+            <div class="category-overlay">
+              <h3>Men's Collection</h3>
+              <span class="category-cta">Shop Now <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+          <a href="/collection/women" class="category-item">
+            <div class="category-image" style="background-image: url('/api/placeholder/500/600'); background-size: cover;"></div>
+            <div class="category-overlay">
+              <h3>Women's Collection</h3>
+              <span class="category-cta">Shop Now <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+          <a href="/collection/exclusive" class="category-item">
+            <div class="category-image" style="background-image: url('/api/placeholder/500/600'); background-size: cover;"></div>
+            <div class="category-overlay">
+              <h3>Exclusive Designs</h3>
+              <span class="category-cta">Shop Now <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+          <a href="/collection/traditional" class="category-item">
+            <div class="category-image" style="background-image: url('/api/placeholder/500/600'); background-size: cover;"></div>
+            <div class="category-overlay">
+              <h3>Traditional Inspired</h3>
+              <span class="category-cta">Shop Now <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="trending-products">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Trending Now</h2>
+          <a href="/shop" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="product-badge new">New</div>
+            <div class="wishlist-btn"><i class="far fa-heart"></i></div>
+            <a href="/product/1" class="product-image">
+              <img src="/api/placeholder/300/300" alt="Product Name">
+              <div class="hover-image">
+                <img src="/api/placeholder/300/300" alt="Product Name Hover">
+              </div>
+            </a>
+            <div class="product-info">
+              <span class="product-category">Men's Formal</span>
+              <h3 class="product-name"><a href="/product/1">Executive Black Oxford</a></h3>
+              <div class="product-price">
+                <span class="current-price">₦38,500</span>
+              </div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="rating-count">(24)</span>
+              </div>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+          </div>
+          
+          <div class="product-card">
+            <div class="product-badge sale">-15%</div>
+            <div class="wishlist-btn"><i class="far fa-heart"></i></div>
+            <a href="/product/2" class="product-image">
+              <img src="/api/placeholder/300/300" alt="Product Name">
+              <div class="hover-image">
+                <img src="/api/placeholder/300/300" alt="Product Name Hover">
+              </div>
+            </a>
+            <div class="product-info">
+              <span class="product-category">Women's Heels</span>
+              <h3 class="product-name"><a href="/product/2">Crystal Embellished Pump</a></h3>
+              <div class="product-price">
+                <span class="current-price">₦42,000</span>
+                <span class="old-price">₦49,500</span>
+              </div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="rating-count">(37)</span>
+              </div>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+          </div>
+          
+          <div class="product-card">
+            <div class="wishlist-btn"><i class="far fa-heart"></i></div>
+            <a href="/product/3" class="product-image">
+              <img src="/api/placeholder/300/300" alt="Product Name">
+              <div class="hover-image">
+                <img src="/api/placeholder/300/300" alt="Product Name Hover">
+              </div>
+            </a>
+            <div class="product-info">
+              <span class="product-category">Men's Casual</span>
+              <h3 class="product-name"><a href="/product/3">Premium Leather Loafer</a></h3>
+              <div class="product-price">
+                <span class="current-price">₦35,000</span>
+              </div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span class="rating-count">(19)</span>
+              </div>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+          </div>
+          
+          <div class="product-card">
+            <div class="product-badge bestseller">Best Seller</div>
+            <div class="wishlist-btn"><i class="far fa-heart"></i></div>
+            <a href="/product/4" class="product-image">
+              <img src="/api/placeholder/300/300" alt="Product Name">
+              <div class="hover-image">
+                <img src="/api/placeholder/300/300" alt="Product Name Hover">
+              </div>
+            </a>
+            <div class="product-info">
+              <span class="product-category">Women's Flats</span>
+              <h3 class="product-name"><a href="/product/4">Ankara Print Ballet Flat</a></h3>
+              <div class="product-price">
+                <span class="current-price">₦29,500</span>
+              </div>
+              <div class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="rating-count">(52)</span>
+              </div>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="banner-section">
+      <div class="container">
+        <div class="dual-banner">
+          <div class="banner">
+            <div class="banner-content">
+              <span class="banner-subtitle">Limited Edition</span>
+              <h3 class="banner-title">Handcrafted<br>Nigerian Leather</h3>
+              <p>Authentic designs from master craftsmen</p>
+              <a href="/collection/leather" class="btn primary-btn">Explore Collection</a>
+            </div>
+            <div class="banner-image" style="background-image: url('/api/placeholder/600/400'); background-size: cover;"></div>
+          </div>
+          <div class="banner">
+            <div class="banner-content">
+              <span class="banner-subtitle">New Arrival</span>
+              <h3 class="banner-title">Premium<br>Wedding Collection</h3>
+              <p>Elegant footwear for your special day</p>
+              <a href="/collection/wedding" class="btn primary-btn">View Collection</a>
+            </div>
+            <div class="banner-image" style="background-image: url('/api/placeholder/600/400'); background-size: cover;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features-section">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="fas fa-truck"></i>
+            </div>
+            <h4>Nationwide Delivery</h4>
+            <p>Fast shipping across Nigeria and West Africa</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h4>Authentic Products</h4>
+            <p>100% genuine handcrafted footwear</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="fas fa-undo"></i>
+            </div>
+            <h4>Easy Returns</h4>
+            <p>30-day hassle-free return policy</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h4>24/7 Support</h4>
+            <p>Customer service available anytime</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="instagram-section">
+      <div class="container">
+        <h2 class="section-title">Follow Us on Instagram</h2>
+        <p class="instagram-handle">@constified_signature</p>
+        <div class="instagram-grid">
+          <a href="#" class="instagram-item">
+            <img src="/api/placeholder/300/300" alt="Instagram Post">
+            <div class="instagram-overlay">
+              <i class="fab fa-instagram"></i>
+            </div>
+          </a>
+          <a href="#" class="instagram-item">
+            <img src="/api/placeholder/300/300" alt="Instagram Post">
+            <div class="instagram-overlay">
+              <i class="fab fa-instagram"></i>
+            </div>
+          </a>
+          <a href="#" class="instagram-item">
+            <img src="/api/placeholder/300/300" alt="Instagram Post">
+            <div class="instagram-overlay">
+              <i class="fab fa-instagram"></i>
+            </div>
+          </a>
+          <a href="#" class="instagram-item">
+            <img src="/api/placeholder/300/300" alt="Instagram Post">
+            <div class="instagram-overlay">
+              <i class="fab fa-instagram"></i>
+            </div>
+          </a>
+          <a href="#" class="instagram-item">
+            <img src="/api/placeholder/300/300" alt="Instagram Post">
+            <div class="instagram-overlay">
+              <i class="fab fa-instagram"></i>
+            </div>
+          </a>
+          <a href="#" class="instagram-item">
+            <img src="/api/placeholder/300/300" alt="Instagram Post">
+            <div class="instagram-overlay">
+              <i class="fab fa-instagram"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-content">
+          <h2>Join Our VIP List</h2>
+          <p>Subscribe to receive updates on new arrivals, special offers and exclusive events.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit" class="btn primary-btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <%- include('partials/footer') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>

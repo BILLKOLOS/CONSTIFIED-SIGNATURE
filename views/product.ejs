@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> | CONSTIFIED SIGNATURE</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  
+  <main>
+    <section class="breadcrumb-section">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="/">Home</a> / <a href="/shop">Shop</a> / <span>Executive Black Oxford</span>
+        </div>
+      </div>
+    </section>
+    
+    <section class="product-details">
+      <div class="container">
+        <div class="product-layout">
+          <div class="product-gallery">
+            <div class="main-image">
+              <img src="/api/placeholder/600/600" alt="Product Name" id="mainImage">
+            </div>
+            <div class="thumbnail-slider">
+              <div class="thumbnail active" onclick="changeImage('/api/placeholder/600/600')">
+                <img src="/api/placeholder/100/100" alt="Thumbnail 1">
+              </div>
+              <div class="thumbnail" onclick="changeImage('/api/placeholder/600/600')">
+                <img src="/api/placeholder/100/100" alt="Thumbnail 2">
+              </div>
+              <div class="thumbnail" onclick="changeImage('/api/placeholder/600/600')">
+                <img src="/api/placeholder/100/100" alt="Thumbnail 3">
+              </div>
+              <div class="thumbnail" onclick="changeImage('/api/placeholder/600/600')">
+                <img src="/api/placeholder/100/100" alt="Thumbnail 4">
+              </div>
+              <div class="thumbnail" onclick="changeImage('/api/placeholder/600/600')">
+                <img src="/api/placeholder/100/100" alt="Thumbnail 5">
+              </div>
+            </div>
+          </div>
+          <div class="product-summary">
+            <h1 class="product-title">Executive Black Oxford</h1>
+            <div class="product-rating">
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+              <span class="review-count">24 Reviews</span>
+            </div>
+            <div class="product-price">
+              <span class="current-price">₦38,500</span>
+              <span class="availability in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+            </div>
+            <div class="product-description">
+              <p>Premium handcrafted men's oxford shoes made from genuine Nigerian leather. Features a sleek design with meticulous stitching and a comfortable fit perfect for formal occasions and business wear.</p>
+              <ul class="product-features">
+                <li>Genuine full-grain leather upper</li>
+                <li>Leather lining for breathability</li>
+                <li>Cushioned insole for all-day comfort</li>
+                <li>Durable leather outsole with rubber grip</li>
+                <li>Handcrafted in Imo State, Nigeria</li>
+              </ul>
+            </div>
+            <div class="product-meta">
+              <div class="meta-item">
+                <span class="label">SKU:</span>
+                <span class="value">CS-MEN-OX-001</span>
+              </div>
+              <div class="meta-item">
+                <span class="label">Category:</span>
+                <span class="value">Men's Footwear, Formal</span>
+              </div>
+              <div class="meta-item">
+                <span class="label">Tags:</span>
+                <span class="value">Oxford, Leather, Business, Formal</span>
+              </div>
+            </div>
+            <div class="product-variations">
+              <div class="variation-size">
+                <h4>Size</h4>
+                <div class="size-selector">
+                  <label class="size-option">
+                    <input type="radio" name="size" value="39">
+                    <span>39</span>
+                  </label>
+                  <label class="size-option">
+                    <input type="radio" name="size" value="40">
+                    <span>40</span>
+                  </label>
+                  <label class="size-option">
+                    <input type="radio" name="size" value="41">
+                    <span>41</span>
+                  </label>
+                  <label class="size-option">
+                    <input type="radio" name="size" value="42">
+                    <span>42</span>
+                  </label>
+                  <label class="size-option">
+                    <input type="radio" name="size" value="43">
+                    <span>43</span>
+                  </label>
+                  <label class="size-option">
+                    <input type="radio" name="size" value="44">
+                    <span>44</span>
+                  </label>
+                  <label class="size-option">
+                    <input type="radio" name="size" value="45">
+                    <span>45</span>
+                  </label>
+                </div>
+                <a href="#size-guide" class="size-guide-link">Size Guide</a>
+              </div>
+              <div class="variation-color">
+                <h4>Color</h4>
+                <div class="color-selector">
+                  <label class="color-option">
+                    <input type="radio" name="color" value="black" checked>
+                    <span class="color-swatch" style="background-color: #000;"></span>
+                  </label>
+                  <label class="color-option">
+                    <input type="radio" name="color" value="brown">
+                    <span class="color-swatch" style="background-color: #8B4513;"></span>
+                  </label>
+                  <label class="color-option">
+                    <input type="radio" name="color" value="burgundy">
+                    <span class="color-swatch" style="background-color: #800020;"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="product-actions">
+              <div class="quantity-selector">
+                <button class="quantity-btn decrease">-</button>
+                <input type="number" value="1" min="1" max="10" class="quantity-input">
+                <button class="quantity-btn increase">+</button>
+              </div>
+              <button class="btn primary-btn add-to-cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+              <button class="btn wishlist-btn"><i class="far fa-heart"></i></button>
+            </div>
+            <div class="product-delivery">
+              <div class="delivery-option">
+                <i class="fas fa-truck"></i>
+                <div class="delivery-details">
+                  <span class="delivery-title">Nationwide Delivery</span>
+                  <span class="delivery-desc">2-5 business days</span>
+                </div>
+              </div>
+              <div class="delivery-option">
+                <i class="fas fa-undo"></i>
+                <div class="delivery-details">
+                  <span class="delivery-title">Easy Returns</span>
+                  <span class="delivery-desc">30-day return policy</span>
+                </div>
+              </div>
+            </div>
+            <div class="product-share">
+              <span>Share:</span>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-pinterest-p"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="product-tabs">
+      <div class="container">
+        <div class="tabs">
+          <button class="tab-button active" data-tab="description">Description</button>
+          <button class="tab-button" data-tab="specifications">Specifications</button>
+          <button class="tab-button" data-tab="reviews">Reviews (24)</button>
+          <button class="tab-button" data-tab="shipping">Shipping & Returns</button>
+        </div>
+        <div class="tab-content">
+          <div class="tab-pane active" id="description">
+            <div class="description-content">
+              <h3>Product Details</h3>
+              <p>Step into sophistication with our Executive Black Oxford shoes, handcrafted by skilled artisans in Nigeria. These premium formal shoes combine traditional craftsmanship with modern design for the discerning gentleman.</p>
+              <p>Made from the finest locally sourced full-grain leather, these oxfords feature a sleek silhouette with closed lacing for a classic, timeless look. The detailed stitching and burnished finish showcase the exceptional quality and attention to detail that Constified Signature is known for.</p>
+              <h3>Features</h3>
+              <ul>
+                <li>Genuine Nigerian full-grain leather upper</li>
+                <li>Leather lining for enhanced breathability</li>
+                <li>Cushioned leather insole for all-day comfort</li>
+                <li>Durable leather outsole with rubber grip for traction</li>
+                <li>Elegantly designed with subtle branding</li>
+                <li>Closed lacing system for a formal look</li>
+                <li>Reinforced stitching for durability</li>
+              </ul>
+              <h3>Perfect For</h3>
+              <p>These versatile oxfords are ideal for business meetings, formal events, weddings, and any occasion that calls for sophisticated style. Pair them with a tailored suit for a complete executive look.</p>
+              <h3>Care Instructions</h3>
+              <p>To maintain the quality and appearance of your oxfords:</p>
+              <ul>
+                <li>Clean with a soft, damp cloth and high-quality shoe polish</li>
+                <li>Use a shoe horn when putting them on to maintain the heel shape</li>
+                <li>Store with shoe trees to maintain shape and absorb moisture</li>
+                <li>Allow 24 hours between wears to ensure proper drying</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tab-pane" id="specifications">
+            <div class="specifications-content">
+              <table class="specs-table">
+                <tr>
+                  <th>Material</th>
+                  <td>Full-grain genuine leather (upper), Leather (lining), Rubber (grip sole)</td>
+                </tr>
+                <tr>
+                  <th>Style</th>
+                  <td>Oxford, Formal</td>
+                </tr>
+                <tr>
+                  <th>Available Sizes</th>
+                  <td>39-45 (EU)</td>
+                </tr>
+                <tr>
+                  <th>Available Colors</th>
+                  <td>Black, Brown, Burgundy</td>
+                </tr>
+                <tr>
+                  <th>Closure Type</th>
+                  <td>Lace-up</td>
+                </tr>
+                <tr>
+                  <th>Heel Height</th>
+                  <td>1 inch</td>
+                </tr>
+                <tr>
+                  <th>Shoe Width</th>
+                  <td>Medium (D)</td>
+                </tr>
+                <tr>
+                  <th>Country of Origin</th>
+                  <td>Nigeria</td>
+                </tr>
+                <tr>
+                  <th>Care Instructions</th>
+                  <td>Clean with damp cloth, polish regularly, use shoe trees</td>
+                </tr>
+                <tr>
+                  <th>Packaging</th>
+                  <td>Premium shoe box with dust bag</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="tab-pane" id="reviews">
+            <div class="reviews-content">
+              <div class="review-summary">
+                <div class="average-rating">
+                  <div class="rating-number">4.5</div>
+                  <div class="rating-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <div class="total-reviews">Based on 24 reviews</div>
+                </div>
+                <div class="rating-breakdown">
+                  <div class="rating-bar">
+                    <span class="rating-label">5 Star</span>
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 75%"></div>
+                    </div>
+                    <span class="rating-count">18</span>
+                  </div>
+                  <div class="rating-bar">
+                    <span class="rating-label">4 Star</span>
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 17%"></div>
+                    </div>
+                    <span class="rating-count">4</span>
+                  </div>
+                  <div class="rating-bar">
+                    <span class="rating-label">3 Star</span>
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 8%"></div>
+                    </div>
+                    <span class="rating-count">2</span>
+                  </div>
+                  <div class="rating-bar">
+                    <span class="rating-label">2 Star</span>
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 0%"></div>
+                    </div>
+                    <span class="rating-count">0</span>
+                  </div>
+                  <div class="rating-bar">
+                    <span class="rating-label">1 Star</span>
+                    <div class="progress-bar">
+                      <div class="progress" style="width: 0%"></div>
+                    </div>
+                    <span class="rating-count">0</span>
+                  </div>
+                </div>
+                <div class="write-review">
+                  <button class="btn secondary-btn">Write a Review</button>
+                </div>
+              </div>
+              <div class="customer-reviews">
+                <div class="review-item">
+                  <div class="reviewer-info">
+                    <div class="reviewer-avatar">
+                      <img src="/api/placeholder/50/50" alt="John O.">
+                    </div>
+                    <div class="reviewer-details">
+                      <h4>John O.</h4>
+                      <div class="review-date">January 15, 2025</div>
+                      <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review-content">
+                    <h4>Exceptional quality and craftsmanship</h4>
+                    <p>These oxfords have exceeded my expectations. The leather quality is outstanding and the attention to detail is evident. They're comfortable from day one and have received numerous compliments. Proud to support Nigerian craftsmanship!</p>
+                    <div class="review-photos">
+                      <img src="/api/placeholder/100/100" alt="Customer Photo">
+                      <img src="/api/placeholder/100/100" alt="Customer Photo">
+                    </div>
+                  </div>
+                </div>
+                <div class="review-item">
+                  <div class="reviewer-info">
+                    <div class="reviewer-avatar">
+                      <img src="/api/placeholder/50/50" alt="Michael D.">
+                    </div>
+                    <div class="reviewer-details">
+                      <h4>Michael D.</h4>
+                      <div class="review-date">December 20, 2024</div>
+                      <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="review-content">
+                    <h4>Great formal shoes</h4>
+                    <p>Very impressed with these oxfords. The fit is perfect and they look much more expensive than they are. Delivery was prompt and the packaging was impressive. Would definitely recommend.</p>
+                  </div>
+                </div>
+                <!-- More reviews would be displayed here -->
+                <div class="load-more">
+                  <button class="btn load-more-btn">Load More Reviews</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="shipping">
+            <div class="shipping-content">
+              <h3>Shipping Information</h3>
+              <p>At Constified Signature, we strive to deliver your order quickly and safely to your doorstep.</p>
+              <table class="shipping-table">
+                <tr>
+                  <th>Location</th>
+                  <th>Estimated Delivery Time</th>
+                  <th>Shipping Fee</th>
+                </tr>
+                <tr>
+                  <td>Lagos State</td>
+                  <td>1-2 business days</td>
+                  <td>₦1,500</td>
+                </tr>
+                <tr>
+                  <td>Imo State (Orlu)</td>
+                  <td>Same day - 1 business day</td>
+                  <td>₦1,000</td>
+                </tr>
+                <tr>
+                  <td>Other States in Nigeria</td>
+                  <td>2-5 business days</td>
+                  <td>₦2,500</td>
+                </tr>
+                <tr>
+                  <td>West African Countries</td>
+                  <td>5-10 business days</td>
+                  <td>₦8,000 - ₦15,000 (depending on location)</td>
+                </tr>
+              </table>
+              <p>Free shipping on orders above ₦75,000 within Nigeria.</p>
+              
+              <h3>Returns & Exchanges Policy</h3>
+              <p>We want you to be completely satisfied with your purchase. If for any reason you are not happy with your order, we offer a simple returns and exchange policy:</p>
+              <ul>
+                <li>Return or exchange within 30 days of receiving your order</li>
+                <li>Items must be unworn, in original condition with all tags attached</li>
+                <li>Original receipt or proof of purchase is required</li>
+                <li>Refunds will be issued to the original payment method</li>
+                <li>Custom or personalized orders cannot be returned unless defective</li>
+              </ul>
+              <p>To initiate a return or exchange, please contact our customer service team at <a href="mailto:returns@constifiedsignature.com">returns@constifiedsignature.com</a> or call +2349030841701.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="related-products">
+      <div class="container">
+        <h2 class="section-title">You May Also Like</h2>
+        <div class="product-slider">
+          <div class="product-card">
+            <div class="wishlist-btn"><i class="far fa-heart"></i></div>
+            <a href="/product/5" class="product-image">
+              <img src="/api/placeholder/300/300" alt="Product Name">
+            </a>
+            <div class="product-info">
+              <span class="product-category">Men's Formal</span>
+              <h3 class="product-name"><a href="/product/5">Classic Leather Brogue</a></h3>
+              <div class="product-price">
+                <span class="current-price">₦42,000</span>
+              </div>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+          </div>
+          
+          <div class="product-card">
+            <div class="wishlist-btn"><i class="far fa-heart"></i></div>
+            <a href="/product/6" class="product-image">
+              <img src="/api/placeholder/300/300" alt="Product Name">
+            </a>
+            <div class="product-info">
+              <span class="product-category">Men's Formal</span>
+              <h3 class="product-name"><a href="/product/6">Premium Derby Shoes</a></h3>
+              <div class="product-price">
+                <span class="current-price">₦41,500</span>
+              </div>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+          </div>
+          
+          <div class="product-card">
+            <div class="product-badge sale">-10%</div>
+            <div class="wishlist-btn"><i class="far fa-heart"></i></div>
+            <a href="/product/7" class="product-image">
+              <img src="/api/placeholder/300/300" alt="Product Name">
+            </a>
+            <div class="product-info">
+              <span class="product-category">Men's Formal</span>
+              <h3 class="product-name"><a href="/product/7">Patent Leather Loafer</a></h3>
+              <div class="product-price">
+                <span class="current-price">₦36,000</span>
+                <span class="old-price">₦40,000</span>
+              </div>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+          </div>
+          
+          <div class="product-card">
+            <div class="wishlist-btn"><i class="far fa-heart"></i></div>
+            <a href="/product/8" class="product-image">
+              <img src="/api/placeholder/300/300" alt="Product Name">
+            </a>
+            <div class="product-info">
+              <span class="product-category">Men's Formal</span>
+              <h3 class="product-name"><a href="/product/8">Monk Strap Dress Shoe</a></h3>
+              <div class="product-price">
+                <span class="current-price">₦45,000</span>
+              </div>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <%- include('partials/footer') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>`
+
+// views/cart.ejs (Shopping cart page)
+`<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> | CONSTIFIED SIGNATURE</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Shopping Cart</h1>
+        <div class="breadcrumb">
+          <a href="/">Home</a> / <span>Cart</span>
+        </div>
+      </div>
+    </section>
+    
+    <section class="cart-section">
+      <div class="container">
+        <div class="cart-content">
+          <div class="cart-items">
+            <table class="cart-table">
+              <thead>
+                <tr>
+                  <th class="product-col">Product</th>
+                  <th class="price-col">Price</th>
+                  <th class="quantity-col">Quantity</th>
+                  <th class="subtotal-col">Subtotal</th>
+                  <th class="remove-col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="cart-item">
+                  <td class="product-col">
+                    <div class="product-info">
+                      <a href="/product/1" class="product-image">
+                        <img src="/api/placeholder/100/100" alt="Executive Black Oxford">
+                      </a>
+                      <div class="product-details">
+                        <h3 class="product-name"><a href="/product/1">Executive Black Oxford</a></h3>
+                        <div class="product-meta">
+                          <span class="product-size">Size: 42</span>
+                          <span class="product-color">Color: Black</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="price-col">₦38,500</td>
+                  <td class="quantity-col">
+                    <div class="quantity-selector">
+                      <button class="quantity-btn decrease">-</button>
+                      <input type="number" value="1" min="1" class="quantity-input">
+                      <button class="quantity-btn increase">+</button>
+                    </div>
+                  </td>
+                  <td class="subtotal-col">₦38,500</td>
+                  <td class="remove-col">
+                    <button class="remove-item-btn"><i class="fas fa-times"></i></button>
+                  </td>
+                </tr>
+                <tr class="cart-item">
+                  <td class="product-col">
+                    <div class="product-info">
+                      <a href="/product/4" class="product-image">
+                        <img src="/api/placeholder/100/100" alt="Ankara Print Ballet Flat">
+                      </a>
+                      <div class="product-details">
+                        <h3 class="product-name"><a href="/product/4">Ankara Print Ballet Flat</a></h3>
+                        <div class="product-meta">
+                          <span class="product-size">Size: 38</span>
+                          <span class="product-color">Color: Multicolor</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="price-col">₦29,500</td>
+                  <td class="quantity-col">
+                    <div class="quantity-selector">
+                      <button class="quantity-btn decrease">-</button>
+                      <input type="number" value="1" min="1" class="quantity-input">
+                      <button class="quantity-btn increase">+</button>
+                    </div>
+                  </td>
+                  <td class="subtotal-col">₦29,500</td>
+                  <td class="remove-col">
+                    <button class="remove-item-btn"><i class="fas fa-times"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <div class="cart-actions">
+              <div class="coupon">
+                <input type="text" placeholder="Coupon code" class="coupon-input">
+                <button class="btn secondary-btn">Apply Coupon</button>
+              </div>
+              <button class="btn update-cart-btn">Update Cart</button>
+            </div>
+          </div>
+          
+          <div class="cart-summary">
+            <h3>Cart Totals</h3>
+            <div class="summary-table">
+              <div class="summary-row">
+                <span class="summary-label">Subtotal</span>
+                <span class="summary-value">₦68,000</span>
+              </div>
+              <div class="summary-row">
+                <span class="summary-label">Shipping</span>
+                <div class="shipping-options">
+                  <div class="shipping-option">
+                    <input type="radio" id="shipping-standard" name="shipping" checked>
+                    <label for="shipping-standard">Standard Delivery: ₦2,500</label>
+                  </div>
+                  <div class="shipping-option">
+                    <input type="radio" id="shipping-express" name="shipping">
+                    <label for="shipping-express">Express Delivery: ₦5,000</label>
+                  </div>
+                </div>
+              </div>
+              <div class="summary-row total">
+                <span class="summary-label">Total</span>
+                <span class="summary-value">₦70,500</span>
+              </div>
+            </div>
+            <a href="/checkout" class="btn primary-btn checkout-btn">Proceed to Checkout</a>
+            <div class="continue-shopping">
+              <a href="/shop"><i class="fas fa-arrow-left"></i> Continue Shopping</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="recently-viewed">
+      <div class="container">
+        <h2 class="section-title">Recently Viewed</h2>
+        <div class="product-slider">
+          <div class="product-card">
+            <a href="/product/9" class="product-image">
+              <img src="/api/placeholder/300/300" alt="Product Name">
+            </a>
+            <div class="product-info">
+              <h3 class="product-name"><a href="/product/9">Classic Penny Loafer</a></h3>
+              <div class="product-price">
+                <span class="current-price">₦33,000</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <a href="/product/10" class="product-image">
+              <img src="/api/placeholder/300/300" alt="Product Name">
+            </a>
+            <div class="product-info">
+              <h3 class="product-name"><a href="/product/10">Suede Chelsea Boot</a></h3>
+              <div class="product-price">
+                <span class="current-price">₦45,500</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <a href="/product/11" class="product-image">
+              <img src="/api/placeholder/300/300" alt="<!-- Continuing from product-card in cart.ejs -->
+              <h3 class="product-name"><a href="/product/11">Women's Ankle Strap Sandal</a></h3>
+              <div class="product-price">
+                <span class="current-price">₦31,000</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <a href="/product/12" class="product-image">
+              <img src="/api/placeholder/300/300" alt="Product Name">
+            </a>
+            <div class="product-info">
+              <h3 class="product-name"><a href="/product/12">Traditional Beaded Slipper</a></h3>
+              <div class="product-price">
+                <span class="current-price">₦25,500</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <%- include('partials/footer') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>

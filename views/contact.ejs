@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> | CONSTIFIED SIGNATURE</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <div class="breadcrumb">
+          <a href="/">Home</a> / <span>Contact</span>
+        </div>
+      </div>
+    </section>
+    
+    <section class="contact-info">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>Visit Our Store</h3>
+            <p>15 Craftsmen Avenue<br>Orlu, Imo State<br>Nigeria</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <h3>Call Us</h3>
+            <p>+234 903 084 1701</p>
+            <p>Monday - Saturday: 9am - 6pm</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3>Email Us</h3>
+            <p>info@constifiedsignature.com</p>
+            <p>support@constifiedsignature.com</p>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-comments"></i>
+            </div>
+            <h3>Live Chat</h3>
+            <p>Available on our website</p>
+            <p>Monday - Friday: 8am - 8pm</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="contact-form-section">
+      <div class="container">
+        <div class="contact-layout">
+          <div class="contact-form-wrapper">
+            <h2>Send Us a Message</h2>
+            <p>Have questions about our products, orders, or anything else? Fill out the form below and we'll get back to you as soon as possible.</p>
+            <form class="contact-form">
+              <div class="form-group">
+                <div class="form-control half">
+                  <label for="name">Your Name *</label>
+                  <input type="text" id="name" required>
+                </div>
+                <div class="form-control half">
+                  <label for="email">Your Email *</label>
+                  <input type="email" id="email" required>
+                </div>
+              </div>
+              <div class="form-control">
+                <label for="phone">Your Phone</label>
+                <input type="tel" id="phone">
+              </div>
+              <div class="form-control">
+                <label for="subject">Subject *</label>
+                <input type="text" id="subject" required>
+              </div>
+              <div class="form-control">
+                <label for="message">Your Message *</label>
+                <textarea id="message" rows="6" required></textarea>
+              </div>
+              <button type="submit" class="btn primary-btn">Send Message</button>
+            </form>
+          </div>
+          <div class="contact-map">
+            <div class="map-container">
+              <!-- In a real implementation, this would be a Google Maps or other map embed -->
+              <div class="placeholder-map" style="background-color: #eee; height: 100%; display: flex; align-items: center; justify-content: center;">
+                <span>Map Location: 15 Craftsmen Avenue, Orlu, Imo State, Nigeria</span>
+              </div>
+            </div>
+            <div class="social-connect">
+              <h3>Connect With Us</h3>
+              <div class="social-icons">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-accordion">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How long does shipping take?</h3>
+              <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+            </div>
+            <div class="faq-answer">
+              <p>Shipping times vary depending on your location. Within Lagos, delivery typically takes 1-2 business days. For other locations in Nigeria, please allow 2-5 business days. International shipping to West African countries takes 5-10 business days.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What is your return policy?</h3>
+              <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+            </div>
+            <div class="faq-answer">
+              <p>We offer a 30-day return policy for unworn items in their original condition with all tags attached. Please contact our customer service team to initiate a return or exchange.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Do you offer custom designs?</h3>
+              <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, we offer custom design services for special events such as weddings or corporate gifts. Please contact us directly to discuss your requirements and pricing options.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How do I care for my leather shoes?</h3>
+              <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+            </div>
+            <div class="faq-answer">
+              <p>For optimal care, clean your leather shoes with a soft, damp cloth and high-quality shoe polish. Use a shoe horn when putting them on, and store with shoe trees to maintain shape. Allow 24 hours between wears to ensure proper drying.</p>
+            </div>
+          </div> 
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Do you ship internationally?</h3>
+              <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+            </div>
+            <div class="faq-answer">
+              <p>Yes, we ship to all West African countries. We're currently expanding our shipping options to include more international destinations. Contact our customer support for specific shipping information to your location.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What payment methods do you accept?</h3>
+              <div class="faq-toggle"><i class="fas fa-plus"></i></div>
+            </div>
+            <div class="faq-answer">
+              <p>We accept various payment methods including credit/debit cards, bank transfers, Paystack, Flutterwave, and cash on delivery (for select locations in Nigeria). All online payments are secure and encrypted.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-wrapper">
+          <div class="newsletter-content">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Stay updated with our latest collections, exclusive offers, and style tips.</p>
+          </div>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your Email Address" required>
+            <button type="submit" class="btn primary-btn">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <%- include('partials/footer') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>

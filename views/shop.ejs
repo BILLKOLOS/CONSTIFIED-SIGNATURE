@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> | CONSTIFIED SIGNATURE</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Shop All Products</h1>
+        <div class="breadcrumb">
+          <a href="/">Home</a> / <span>Shop</span>
+        </div>
+      </div>
+    </section>
+    
+    <section class="shop-section">
+      <div class="container">
+        <div class="shop-layout">
+          <aside class="shop-sidebar">
+            <div class="filter-section">
+              <h3 class="filter-title">Categories</h3>
+              <ul class="filter-list">
+                <li><a href="/collection/men">Men's Footwear</a></li>
+                <li><a href="/collection/women">Women's Footwear</a></li>
+                <li><a href="/collection/exclusive">Exclusive Collection</a></li>
+                <li><a href="/collection/traditional">Traditional Designs</a></li>
+                <li><a href="/collection/formal">Formal</a></li>
+                <li><a href="/collection/casual">Casual</a></li>
+              </ul>
+            </div>
+            
+            <div class="filter-section">
+              <h3 class="filter-title">Filter by Price</h3>
+              <div class="price-slider">
+                <div class="price-input">
+                  <input type="number" class="min-price" value="5000">
+                  <input type="number" class="max-price" value="100000">
+                </div>
+                <div class="slider-track"></div>
+                <div class="range-input">
+                  <input type="range" class="min" min="0" max="100000" value="5000" step="1000">
+                  <input type="range" class="max" min="0" max="100000" value="100000" step="1000">
+                </div>
+              </div>
+              <button class="filter-price-btn">Apply Filter</button>
+            </div>
+            
+            <div class="filter-section">
+              <h3 class="filter-title">Size</h3>
+              <div class="size-options">
+                <label class="size-option">
+                  <input type="checkbox" name="size" value="36">
+                  <span>36</span>
+                </label>
+                <label class="size-option">
+                  <input type="checkbox" name="size" value="37">
+                  <span>37</span>
+                </label>
+                <label class="size-option">
+                  <input type="checkbox" name="size" value="38">
+                  <span>38</span>
+                </label>
+                <label class="size-option">
+                  <input type="checkbox" name="size" value="39">
+                  <span>39</span>
+                </label>
+                <label class="size-option">
+                  <input type="checkbox" name="size" value="40">
+                  <span>40</span>
+                </label>
+                <label class="size-option">
+                  <input type="checkbox" name="size" value="41">
+                  <span>41</span>
+                </label>
+                <label class="size-option">
+                  <input type="checkbox" name="size" value="42">
+                  <span>42</span>
+                </label>
+                <label class="size-option">
+                  <input type="checkbox" name="size" value="43">
+                  <span>43</span>
+                </label>
+                <label class="size-option">
+                  <input type="checkbox" name="size" value="44">
+                  <span>44</span>
+                </label>
+                <label class="size-option">
+                  <input type="checkbox" name="size" value="45">
+                  <span>45</span>
+                </label>
+              </div>
+            </div>
+            
+            <div class="filter-section">
+              <h3 class="filter-title">Color</h3>
+              <div class="color-options">
+                <label class="color-option">
+                  <input type="checkbox" name="color" value="black">
+                  <span class="color-swatch" style="background-color: #000;"></span>
+                  <span>Black</span>
+                </label>
+                <label class="color-option">
+                  <input type="checkbox" name="color" value="brown">
+                  <span class="color-swatch" style="background-color: #8B4513;"></span>
+                  <span>Brown</span>
+                </label>
+                <label class="color-option">
+                  <input type="checkbox" name="color" value="tan">
+                  <span class="color-swatch" style="background-color: #D2B48C;"></span>
+                  <span>Tan</span>
+                </label>
+                <label class="color-option">
+                  <input type="checkbox" name="color" value="navy">
+                  <span class="color-swatch" style="background-color: #000080;"></span>
+                  <span>Navy</span>
+                </label>
+                <label class="color-option">
+                  <input type="checkbox" name="color" value="white">
+                  <span class="color-swatch" style="background-color: #FFF; border: 1px solid #ddd;"></span>
+                  <span>White</span>
+                </label>
+                <label class="color-option">
+                  <input type="checkbox" name="color" value="red">
+                  <span class="color-swatch" style="background-color: #8B0000;"></span>
+                  <span>Red</span>
+                </label>
+                <label class="color-option">
+                  <input type="checkbox" name="color" value="multicolor">
+                  <span class="color-swatch multicolor"></span>
+                  <span>Multicolor</span>
+                </label>
+              </div>
+            </div>
+            
+            <div class="filter-section">
+              <h3 class="filter-title">Material</h3>
+              <ul class="filter-list">
+                <li>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="material" value="leather">
+                    <span>Genuine Leather</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="material" value="suede">
+                    <span>Suede</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="material" value="patent">
+                    <span>Patent Leather</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="material" value="fabric">
+                    <span>Fabric</span>
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="material" value="ankara">
+                    <span>Ankara Print</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+            
+            <button class="clear-filters-btn">Clear All Filters</button>
+          </aside>
+          
+          <div class="shop-content">
+            <div class="shop-toolbar">
+              <div class="product-count">
+                <p>Showing 1-12 of 48 products</p>
+              </div>
+              <div class="shop-sorting">
+                <select class="sort-select">
+                  <option value="featured">Featured</option>
+                  <option value="newest">Newest Arrivals</option>
+                  <option value="price-low">Price: Low to High</option>
+                  <option value="price-high">Price: High to Low</option>
+                  <option value="rating">Top Rated</option>
+                </select>
+                <div class="view-switcher">
+                  <button class="grid-view active"><i class="fas fa-th-large"></i></button>
+                  <button class="list-view"><i class="fas fa-list"></i></button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="product-grid">
+              <!-- Product 1 -->
+              <div class="product-card">
+                <div class="product-badge new">New</div>
+                <div class="wishlist-btn"><i class="far fa-heart"></i></div>
+                <a href="/product/1" class="product-image">
+                  <img src="/api/placeholder/300/300" alt="Product Name">
+                  <div class="hover-image">
+                    <img src="/api/placeholder/300/300" alt="Product Name Hover">
+                  </div>
+                </a>
+                <div class="product-info">
+                  <span class="product-category">Men's Formal</span>
+                  <h3 class="product-name"><a href="/product/1">Executive Black Oxford</a></h3>
+                  <div class="product-price">
+                    <span class="current-price">₦38,500</span>
+                  </div>
+                  <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span class="rating-count">(24)</span>
+                  </div>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+              
+              <!-- Product 2 -->
+              <div class="product-card">
+                <div class="product-badge sale">-15%</div>
+                <div class="wishlist-btn"><i class="far fa-heart"></i></div>
+                <a href="/product/2" class="product-image">
+                  <img src="/api/placeholder/300/300" alt="Product Name">
+                  <div class="hover-image">
+                    <img src="/api/placeholder/300/300" alt="Product Name Hover">
+                  </div>
+                </a>
+                <div class="product-info">
+                  <span class="product-category">Women's Heels</span>
+                  <h3 class="product-name"><a href="/product/2">Crystal Embellished Pump</a></h3>
+                  <div class="product-price">
+                    <span class="current-price">₦42,000</span>
+                    <span class="old-price">₦49,500</span>
+                  </div>
+                  <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span class="rating-count">(37)</span>
+                  </div>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+              </div>
+              
+              <!-- More products (repeat structure) -->
+              <!-- Products 3-12 would be here in the full implementation -->
+            </div>
+            
+            <div class="pagination">
+              <a href="#" class="prev-page"><i class="fas fa-chevron-left"></i></a>
+              <a href="#" class="page-number active">1</a>
+              <a href="#" class="page-number">2</a>
+              <a href="#" class="page-number">3</a>
+              <a href="#" class="page-number">4</a>
+              <a href="#" class="next-page"><i class="fas fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <%- include('partials/footer') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %> | CONSTIFIED SIGNATURE</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Shopping Cart</h1>
+        <div class="breadcrumb">
+          <a href="/">Home</a> / <span>Cart</span>
+        </div>
+      </div>
+    </section>
+    
+    <section class="cart-section">
+      <div class="container">
+        <div class="cart-content">
+          <div class="cart-items">
+            <table class="cart-table">
+              <thead>
+                <tr>
+                  <th class="product-col">Product</th>
+                  <th class="price-col">Price</th>
+                  <th class="quantity-col">Quantity</th>
+                  <th class="subtotal-col">Subtotal</th>
+                  <th class="remove-col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="cart-item">
+                  <td class="product-col">
+                    <div class="product-info">
+                      <a href="/product/1" class="product-image">
+                        <img src="/api/placeholder/100/100" alt="Executive Black Oxford">
+                      </a>
+                      <div class="product-details">
+                        <h3 class="product-name"><a href="/product/1">Executive Black Oxford</a></h3>
+                        <div class="product-meta">
+                          <span class="product-size">Size: 42</span>
+                          <span class="product-color">Color: Black</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="price-col">₦38,500</td>
+                  <td class="quantity-col">
+                    <div class="quantity-selector">
+                      <button class="quantity-btn decrease">-</button>
+                      <input type="number" value="1" min="1" class="quantity-input">
+                      <button class="quantity-btn increase">+</button>
+                    </div>
+                  </td>
+                  <td class="subtotal-col">₦38,500</td>
+                  <td class="remove-col">
+                    <button class="remove-item-btn"><i class="fas fa-times"></i></button>
+                  </td>
+                </tr>
+                <tr class="cart-item">
+                  <td class="product-col">
+                    <div class="product-info">
+                      <a href="/product/4" class="product-image">
+                        <img src="/api/placeholder/100/100" alt="Ankara Print Ballet Flat">
+                      </a>
+                      <div class="product-details">
+                        <h3 class="product-name"><a href="/product/4">Ankara Print Ballet Flat</a></h3>
+                        <div class="product-meta">
+                          <span class="product-size">Size: 38</span>
+                          <span class="product-color">Color: Multicolor</span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="price-col">₦29,500</td>
+                  <td class="quantity-col">
+                    <div class="quantity-selector">
+                      <button class="quantity-btn decrease">-</button>
+                      <input type="number" value="1" min="1" class="quantity-input">
+                      <button class="quantity-btn increase">+</button>
+                    </div>
+                  </td>
+                  <td class="subtotal-col">₦29,500</td>
+                  <td class="remove-col">
+                    <button class="remove-item-btn"><i class="fas fa-times"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <div class="cart-actions">
+              <div class="coupon">
+                <input type="text" placeholder="Coupon code" class="coupon-input">
+                <button class="btn secondary-btn">Apply Coupon</button>
+              </div>
+              <button class="btn update-cart-btn">Update Cart</button>
+            </div>
+          </div>
+          
+          <div class="cart-summary">
+            <h3>Cart Totals</h3>
+            <div class="summary-table">
+              <div class="summary-row">
+                <span class="summary-label">Subtotal</span>
+                <span class="summary-value">₦68,000</span>
+              </div>
+              <div class="summary-row">
+                <span class="summary-label">Shipping</span>
+                <div class="shipping-options">
+                  <div class="shipping-option">
+                    <input type="radio" id="shipping-standard" name="shipping" checked>
+                    <label for="shipping-standard">Standard Delivery: ₦2,500</label>
+                  </div>
+                  <div class="shipping-option">
+                    <input type="radio" id="shipping-express" name="shipping">
+                    <label for="shipping-express">Express Delivery: ₦5,000</label>
+                  </div>
+                </div>
+              </div>
+              <div class="summary-row total">
+                <span class="summary-label">Total</span>
+                <span class="summary-value">₦70,500</span>
+              </div>
+            </div>
+            <a href="/checkout" class="btn primary-btn checkout-btn">Proceed to Checkout</a>
+            <div class="continue-shopping">
+              <a href="/shop"><i class="fas fa-arrow-left"></i> Continue Shopping</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="recently-viewed">
+      <div class="container">
+        <h2 class="section-title">Recently Viewed</h2>
+        <div class="product-slider">
+          <div class="product-card">
+            <a href="/product/9" class="product-image">
+              <img src="/api/placeholder/300/300" alt="Product Name">
+            </a>
+            <div class="product-info">
+              <h3 class="product-name"><a href="/product/9">Classic Penny Loafer</a></h3>
+              <div class="product-price">
+                <span class="current-price">₦33,000</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <a href="/product/10" class="product-image">
+              <img src="/api/placeholder/300/300" alt="Product Name">
+            </a>
+            <div class="product-info">
+              <h3 class="product-name"><a href="/product/10">Suede Chelsea Boot</a></h3>
+              <div class="product-price">
+                <span class="current-price">₦45,500</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <a href="/product/11" class="product-image">
+              <img src="/api/placeholder/300/300" alt="<!-- Continuing from product-card in cart.ejs -->
+              <h3 class="product-name"><a href="/product/11">Women's Ankle Strap Sandal</a></h3>
+              <div class="product-price">
+                <span class="current-price">₦31,000</span>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <a href="/product/12" class="product-image">
+              <img src="/api/placeholder/300/300" alt="Product Name">
+            </a>
+            <div class="product-info">
+              <h3 class="product-name"><a href="/product/12">Traditional Beaded Slipper</a></h3>
+              <div class="product-price">
+                <span class="current-price">₦25,500</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <%- include('partials/footer') %>
+  <script src="/js/main.js"></script>
+</body>
+</html>
