@@ -85,6 +85,11 @@ app.get('/collection/:slug', (req, res) => {
     });
   });
 
+// Add this with your other routes
+app.get('/wishlist', (req, res) => {
+    res.render('wishlist', { title: 'My Wishlist' });
+  });
+
 app.get('/', (req, res) => {
   res.render('index', { title: 'Home' });
 });
