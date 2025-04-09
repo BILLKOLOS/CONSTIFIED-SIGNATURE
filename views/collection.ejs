@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= collectionName %> | CONSTIFIED SIGNATURE</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+  
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1><%= collectionName %></h1>
+        <div class="breadcrumb">
+          <a href="/">Home</a> / <a href="/collections">Collections</a> / <span><%= collectionName %></span>
+        </div>
+      </div>
+    </section>
+    
+    <section class="collection-intro">
+      <div class="container">
+        <div class="collection-description">
+          <% if (collectionDescription) { %>
+            <%- collectionDescription %>
+          <% } else { %>
+            <p>Discover our exquisite range of handcrafted footwear, combining traditional Nigerian craftsmanship with contemporary design. Each piece in our collection is meticulously created by skilled artisans in our Orlu workshop.</p>
+          <% } %>
+        </div>
+      </div>
+    </section>
+    
+    <section class="collection-filters">
+      <div class="container">
+        <div class="filters-wrapper">
+          <div class="filter-toggles">
+            <button class="filter-toggle-btn" id="filterToggleBtn">
+              <i class="fas fa-sliders-h"></i> Filter
+            </button>
+            <div class="sort-dropdown">
+              <label for="sort-select">Sort by:</label>
+              <select id="sort-select" class="sort-select">
+                <option value="featured">Featured</option>
+                <option value="newest">Newest</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="name-asc">Name: A-Z</option>
+                <option value="name-desc">Name: Z-A</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="filter-sidebar" id="filterSidebar">
+            <div class="filter-section">
+              <h3>Categories</h3>
+              <ul class="filter-list">
+                <li>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="category" value="loafers"> Loafers
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="category" value="oxford"> Oxford Shoes
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="category" value="sandals"> Sandals
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="category" value="mules"> Mules
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="category" value="slippers"> Slippers
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="category" value="boots"> Boots
+                  </label>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="filter-section">
+              <h3>Gender</h3>
+              <ul class="filter-list">
+                <li>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="gender" value="men"> Men
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="gender" value="women"> Women
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="gender" value="unisex"> Unisex
+                  </label>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="filter-section">
+              <h3>Materials</h3>
+              <ul class="filter-list">
+                <li>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="material" value="leather"> Premium Leather
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="material" value="suede"> Suede
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="material" value="ankara"> Ankara Print
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="material" value="patent"> Patent Leather
+                  </label>
+                </li>
+                <li>
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="material" value="canvas"> Canvas
+                  </label>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="filter-section">
+              <h3>Price Range</h3>
+              <div class="price-range">
+                <div class="price-inputs">
+                  <div class="price-input">
+                    <label for="min-price">Min</label>
+                    <input type="number" id="min-price" name="min-price" placeholder="₦0">
+                  </div>
+                  <div class="price-separator">-</div>
+                  <div class="price-input">
+                    <label for="max-price">Max</label>
+                    <input type="number" id="max-price" name="max-price" placeholder="₦100,000">
+                  </div>
+                </div>
+                <button class="price-apply-btn">Apply</button>
+              </div>
+            </div>
+            
+            <div class="filter-section">
+              <h3>Size</h3>
+              <div class="size-grid">
+                <button class="size-btn" data-size="35">35</button>
+                <button class="size-btn" data-size="36">36</button>
+                <button class="size-btn" data-size="37">37</button>
+                <button class="size-btn" data-size="38">38</button>
+                <button class="size-btn" data-size="39">39</button>
+                <button class="size-btn" data-size="40">40</button>
+                <button class="size-btn" data-size="41">41</button>
+                <button class="size-btn" data-size="42">42</button>
+                <button class="size-btn" data-size="43">43</button>
+                <button class="size-btn" data-size="44">44</button>
+                <button class="size-btn" data-size="45">45</button>
+                <button class="size-btn" data-size="46">46</button>
+              </div>
+            </div>
+            
+            <div class="filter-section">
+              <h3>Color</h3>
+              <div class="color-grid">
+                <button class="color-btn" style="background-color: #000000;" data-color="black" title="Black"></button>
+                <button class="color-btn" style="background-color: #FFFFFF; border: 1px solid #e0e0e0;" data-color="white" title="White"></button>
+                <button class="color-btn" style="background-color: #964B00;" data-color="brown" title="Brown"></button>
+                <button class="color-btn" style="background-color: #A52A2A;" data-color="burgundy" title="Burgundy"></button>
+                <button class="color-btn" style="background-color: #000080;" data-color="navy" title="Navy"></button>
+                <button class="color-btn" style="background-color: #C9B037;" data-color="gold" title="Gold"></button>
+                <button class="color-btn" style="background-color: #C0C0C0;" data-color="silver" title="Silver"></button>
+                <button class="color-btn" style="background-color: #808080;" data-color="gray" title="Gray"></button>
+                <button class="color-btn" style="background-color: #008000;" data-color="green" title="Green"></button>
+                <button class="color-btn" style="background-color: #FF0000;" data-color="red" title="Red"></button>
+              </div>
+            </div>
+            
+            <div class="filter-actions">
+              <button class="btn secondary-btn filter-clear">Clear All</button>
+              <button class="btn primary-btn filter-apply">Apply Filters</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="collection-products">
+      <div class="container">
+        <div class="active-filters">
+          <div class="filter-chips" id="activeFilterChips">
+            <!-- Active filters will be displayed here via JavaScript -->
+          </div>
+        </div>
+        
+        <div class="products-grid">
+          <% products.forEach(function(product) { %>
+            <div class="product-card">
+              <div class="product-badge">
+                <% if (product.isNew) { %>
+                  <span class="badge new-badge">New</span>
+                <% } %>
+                <% if (product.isSale) { %>
+                  <span class="badge sale-badge">Sale</span>
+                <% } %>
+                <% if (product.isLimited) { %>
+                  <span class="badge limited-badge">Limited</span>
+                <% } %>
+              </div>
+              <div class="product-image">
+                <a href="/product/<%= product.slug %>">
+                  <img src="<%= product.image %>" alt="<%= product.name %>">
+                  <% if (product.imageHover) { %>
+                    <img class="product-image-hover" src="<%= product.imageHover %>" alt="<%= product.name %> hover">
+                  <% } %>
+                </a>
+                <div class="product-actions">
+                  <button class="quick-view-btn" data-product-id="<%= product.id %>">
+                    <i class="fas fa-eye"></i>
+                    <span class="tooltip">Quick View</span>
+                  </button>
+                  <button class="wishlist-btn" data-product-id="<%= product.id %>">
+                    <i class="<%= product.inWishlist ? 'fas' : 'far' %> fa-heart"></i>
+                    <span class="tooltip">Add to Wishlist</span>
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h3 class="product-title"><a href="/product/<%= product.slug %>"><%= product.name %></a></h3>
+                <div class="product-category"><%= product.category %></div>
+                <div class="product-price">
+                  <% if (product.salePrice) { %>
+                    <span class="price-old">₦<%= product.price.toLocaleString() %></span>
+                    <span class="price-current">₦<%= product.salePrice.toLocaleString() %></span>
+                  <% } else { %>
+                    <span class="price-current">₦<%= product.price.toLocaleString() %></span>
+                  <% } %>
+                </div>
+                <div class="product-rating">
+                  <div class="stars">
+                    <% for (let i = 1; i <= 5; i++) { %>
+                      <i class="<%= i <= product.rating ? 'fas' : 'far' %> fa-star"></i>
+                    <% } %>
+                  </div>
+                  <span class="rating-count">(<%= product.reviewCount %>)</span>
+                </div>
+                <div class="product-colors">
+                  <% if (product.colors && product.colors.length > 0) { %>
+                    <% product.colors.forEach(function(color) { %>
+                      <% if (color.hex) { %>
+                        <span class="color-dot" style="background-color: <%= color.hex %>" title="<%= color.name %>"></span>
+                      <% } else { %>
+                        <span class="color-dot" title="<%= color.name %>"></span>
+                      <% } %>
+                    <% }); %>
+                  <% } %>
+                </div>
+              </div>
+              <div class="product-cta">
+                <button class="btn primary-btn add-to-cart-btn" data-product-id="<%= product.id %>">Add to Cart</button>
+              </div>
+            </div>
+          <% }); %>
+        </div>
+        
+        <div class="pagination">
+          <% if (totalPages > 1) { %>
+            <div class="pagination-controls">
+              <% if (currentPage > 1) { %>
+                <a href="?page=<%= currentPage - 1 %>" class="pagination-prev"><i class="fas fa-chevron-left"></i> Previous</a>
+              <% } %>
+              
+              <% for (let i = 1; i <= totalPages; i++) { %>
+                <% if (i === currentPage) { %>
+                  <span class="pagination-current"><%= i %></span>
+                <% } else { %>
+                  <a href="?page=<%= i %>" class="pagination-link"><%= i %></a>
+                <% } %>
+              <% } %>
+              
+              <% if (currentPage < totalPages) { %>
+                <a href="?page=<%= currentPage + 1 %>" class="pagination-next">Next <i class="fas fa-chevron-right"></i></a>
+              <% } %>
+            </div>
+            
+            <div class="products-showing">
+              Showing <%= (currentPage - 1) * itemsPerPage + 1 %>-<%= Math.min(currentPage * itemsPerPage, totalItems) %> of <%= totalItems %> products
+            </div>
+          <% } %>
+        </div>
+      </div>
+    </section>
+    
+    <section class="featured-collections">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Explore Our Collections</h2>
+        </div>
+        <div class="collections-grid">
+          <% featuredCollections.forEach(function(collection) { %>
+            <div class="collection-card">
+              <a href="/collection/<%= collection.slug %>">
+                <div class="collection-image">
+                  <img src="<%= collection.image %>" alt="<%= collection.name %>">
+                </div>
+                <div class="collection-info">
+                  <h3><%= collection.name %></h3>
+                  <span class="collection-count"><%= collection.productCount %> Products</span>
+                </div>
+              </a>
+            </div>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+    
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Handcrafted with Pride in Nigeria</h2>
+          <p>Experience the perfect blend of tradition and contemporary design with our premium footwear collection.</p>
+          <div class="cta-buttons">
+            <a href="/shop" class="btn primary-btn">Shop All Products</a>
+            <a href="/contact" class="btn secondary-btn">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Quick View Modal -->
+    <div class="quick-view-modal" id="quickViewModal">
+      <div class="modal-content">
+        <div class="modal-close">
+          <button id="closeQuickView"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="quick-view-content" id="quickViewContent">
+          <!-- Content will be loaded dynamically via JavaScript -->
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <%- include('partials/footer') %>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Filter sidebar toggle
+      const filterToggleBtn = document.getElementById('filterToggleBtn');
+      const filterSidebar = document.getElementById('filterSidebar');
+      
+      if (filterToggleBtn && filterSidebar) {
+        filterToggleBtn.addEventListener('click', function() {
+          filterSidebar.classList.toggle('active');
+        });
+      }
+      
+      // Size buttons
+      const sizeButtons = document.querySelectorAll('.size-btn');
+      sizeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          this.classList.toggle('selected');
+        });
+      });
+      
+      // Color buttons
+      const colorButtons = document.querySelectorAll('.color-btn');
+      colorButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          this.classList.toggle('selected');
+        });
+      });
+      
+      // Quick view functionality
+      const quickViewBtns = document.querySelectorAll('.quick-view-btn');
+      const quickViewModal = document.getElementById('quickViewModal');
+      const quickViewContent = document.getElementById('quickViewContent');
+      const closeQuickView = document.getElementById('closeQuickView');
+      
+      if (quickViewBtns.length && quickViewModal && closeQuickView) {
+        quickViewBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const productId = this.getAttribute('data-product-id');
+            
+            // Here you would typically fetch the product data from the server
+            // For demonstration, we're using a placeholder
+            quickViewContent.innerHTML = `<div class="loading">Loading product information...</div>`;
+            quickViewModal.classList.add('active');
+            
+            // Simulate loading product data
+            setTimeout(() => {
+              // This would be replaced with actual data from your server
+              fetchQuickViewProduct(productId);
+            }, 500);
+          });
+        });
+        
+        closeQuickView.addEventListener('click', function() {
+          quickViewModal.classList.remove('active');
+        });
+        
+        // Close modal when clicking outside the content
+        quickViewModal.addEventListener('click', function(e) {
+          if (e.target === quickViewModal) {
+            quickViewModal.classList.remove('active');
+          }
+        });
+      }
+      
+      // Simulated product fetch for quick view
+      function fetchQuickViewProduct(productId) {
+        // This would be an actual fetch request in production
+        // For demonstration, we'll use placeholder content
+        
+        const mockProduct = {
+          id: productId,
+          name: "Handcrafted Premium Leather Loafer",
+          price: 45000,
+          salePrice: null,
+          images: ["/api/placeholder/400/400", "/api/placeholder/400/400", "/api/placeholder/400/400"],
+          description: "Expertly crafted from premium Nigerian leather, these loafers combine traditional craftsmanship with contemporary design for unmatched comfort and style.",
+          sizes: [39, 40, 41, 42, 43, 44],
+          colors: [
+            { name: "Black", hex: "#000000" },
+            { name: "Brown", hex: "#964B00" },
+            { name: "Burgundy", hex: "#A52A2A" }
+          ],
+          rating: 4.8,
+          reviewCount: 24
+        };
+        
+        // Generate quick view HTML
+        const quickViewHTML = `
+          <div class="quick-view-product">
+            <div class="quick-view-gallery">
+              <div class="gallery-main">
+                <img src="${mockProduct.images[0]}" alt="${mockProduct.name}" id="mainQuickViewImage">
+              </div>
+              <div class="gallery-thumbnails">
+                ${mockProduct.images.map((img, index) => `
+                  <div class="thumbnail ${index === 0 ? 'active' : ''}" data-image="${img}">
+                    <img src="${img}" alt="${mockProduct.name} thumbnail ${index + 1}">
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+            <div class="quick-view-info">
+              <h2 class="product-title">${mockProduct.name}</h2>
+              <div class="product-rating">
+                <div class="stars">
+                  ${Array(5).fill().map((_, i) => `
+                    <i class="${i < Math.floor(mockProduct.rating) ? 'fas' : 'far'} fa-star"></i>
+                  `).join('')}
+                </div>
+                <span class="rating-count">(${mockProduct.reviewCount} Reviews)</span>
+              </div>
+              <div class="product-price">
+                ${mockProduct.salePrice 
+                  ? `<span class="price-old">₦${mockProduct.price.toLocaleString()}</span>
+                     <span class="price-current">₦${mockProduct.salePrice.toLocaleString()}</span>`
+                  : `<span class="price-current">₦${mockProduct.price.toLocaleString()}</span>`
+                }
+              </div>
+              <div class="product-description">
+                <p>${mockProduct.description}</p>
+              </div>
+              <div class="product-variations">
+                <div class="variation-size">
+                  <h4>Size</h4>
+                  <div class="size-options">
+                    ${mockProduct.sizes.map(size => `
+                      <button class="size-btn" data-size="${size}">${size}</button>
+                    `).join('')}
+                  </div>
+                </div>
+                <div class="variation-color">
+                  <h4>Color</h4>
+                  <div class="color-options">
+                    ${mockProduct.colors.map(color => `
+                      <button class="color-btn" style="background-color: ${color.hex}" data-color="${color.name}" title="${color.name}"></button>
+                    `).join('')}
+                  </div>
+                </div>
+              </div>
+              <div class="product-actions">
+                <div class="quantity-selector">
+                  <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                  <input type="number" value="1" min="1" class="quantity-input">
+                  <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                </div>
+                <button class="btn primary-btn add-to-cart-btn" data-product-id="${productId}">
+                  <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+                <button class="btn icon-btn wishlist-btn" data-product-id="${productId}">
+                  <i class="far fa-heart"></i>
+                </button>
+              </div>
+              <div class="product-meta">
+                <div class="meta-item">
+                  <span class="meta-label">SKU:</span>
+                  <span class="meta-value">CS-${productId}</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Category:</span>
+                  <span class="meta-value"><a href="/collection/loafers">Loafers</a></span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-label">Tags:</span>
+                  <span class="meta-value">
+                    <a href="/tag/leather">Leather</a>,
+                    <a href="/tag/men">Men</a>,
+                    <a href="/tag/handcrafted">Handcrafted</a>
+                  </span>
+                </div>
+              </div>
+              <div class="product-share">
+                <span class="share-label">Share:</span>
+                <div class="social-links">
+                  <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                  <a href="#" class="social-link"><i class="fab fa-pinterest"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+        
+        quickViewContent.innerHTML = quickViewHTML;
+        
+        // Initialize quick view functionality
+        initQuickViewFunctions();
+      }
+      
+      function initQuickViewFunctions() {
+        // Thumbnail gallery functionality
+        const thumbnails = document.querySelectorAll('.quick-view-product .thumbnail');
+        const mainImage = document.getElementById('mainQuickViewImage');
+        
+        if (thumbnails.length && mainImage) {
+          thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', function() {
+              // Remove active class from all thumbnails
+              thumbnails.forEach(t => t.classList.remove('active'));
+              
+              // Add active class to clicked thumbnail
+              this.classList.add('active');
+              
+              // Update main image
+              const imageUrl = this.getAttribute('data-image');
+              mainImage.src = imageUrl;
+            });
+          });
+        }
+        
+        // Quantity selector functionality
+        const minusBtn = document.querySelector('.quick-view-product .quantity-btn.minus');
+        const plusBtn = document.querySelector('.quick-view-product .quantity-btn.plus');
+        const quantityInput = document.querySelector('.quick-view-product .quantity-input');
+        
+        if (minusBtn && plusBtn && quantityInput) {
+          minusBtn.addEventListener('click', function() {
+            let value = parseInt(quantityInput.value);
+            if (value > 1) {
+              quantityInput.value = value - 1;
+            }
+          });
+          
+          plusBtn.addEventListener('click', function() {
+            let value = parseInt(quantityInput.value);
+            quantityInput.value = value + 1;
+          });
+          
+          quantityInput.addEventListener('change', function() {
+            let value = parseInt(this.value);
+            if (isNaN(value) || value < 1) {
+              this.value = 1;
+            }
+          });
+        }
+        
+        // Size selection
+        const sizeButtons = document.querySelectorAll('.quick-view-product .size-btn');
+        sizeButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            sizeButtons.forEach(btn => btn.classList.remove('selected'));
+            this.classList.add('selected');
+          });
+        });
+        
+        // Color selection
+        const colorButtons = document.querySelectorAll('.quick-view-product .color-btn');
+        colorButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            colorButtons.forEach(btn => btn.classList.remove('selected'));
+            this.classList.add('selected');
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

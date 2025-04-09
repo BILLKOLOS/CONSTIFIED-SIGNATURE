@@ -1849,3 +1849,26 @@
   ::-webkit-scrollbar-thumb:hover {
     background: var(--secondary-color);
   }    
+
+
+
+  .product-colors {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .color-dot {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .color-dot:hover {
+    transform: scale(1.2);
+    border-color: var(--primary-color);
+  }
